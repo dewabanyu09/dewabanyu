@@ -1,0 +1,894 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio Dewa Banyu Samudra</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <style>
+        :root {
+            --bg: #100b18;
+            --card: #1c1428;
+            --purple: #a855f7;
+            --purple-light: #c084fc;
+            --purple-dark: #7c3aed;
+            --white: #f5f0ff;
+            --muted: #c0b2d6;
+            --black: #050308;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 85px;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: var(--bg);
+            color: var(--white);
+            line-height: 1.7;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        section {
+            padding: 85px 0;
+        }
+
+        h2 {
+            font-size: clamp(28px, 4vw, 40px);
+            margin-bottom: 35px;
+        }
+
+        h2 span {
+            color: var(--purple-light);
+        }
+
+        /* NAVBAR */
+
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(16, 11, 24, 0.95);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid #39264d;
+        }
+
+        nav .container {
+            min-height: 75px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .logo {
+            font-size: 19px;
+            font-weight: 800;
+            color: var(--purple-light);
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+
+        .nav-links a {
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--purple-light);
+        }
+
+        /* HERO */
+
+        .hero {
+            min-height: 85vh;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            background:
+                radial-gradient(
+                    circle at 85% 40%,
+                    rgba(124, 58, 237, 0.18),
+                    transparent 35%
+                );
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .badge {
+            display: inline-block;
+            background: rgba(168, 85, 247, 0.15);
+            border: 1px solid var(--purple);
+            color: var(--purple-light);
+            border-radius: 30px;
+            padding: 7px 18px;
+            margin-bottom: 20px;
+            font-size: 13px;
+        }
+
+        .hero h1 {
+            font-size: clamp(38px, 6vw, 65px);
+            line-height: 1.15;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 span {
+            color: var(--purple-light);
+            display: block;
+        }
+
+        .hero p {
+            color: var(--muted);
+            max-width: 520px;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 23px;
+            background: var(--purple-dark);
+            border: 1px solid var(--purple);
+            border-radius: 10px;
+            color: white;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: var(--purple);
+            transform: translateY(-4px);
+            box-shadow: 0 8px 25px rgba(168, 85, 247, 0.25);
+        }
+
+        .btn-outline {
+            background: transparent;
+            margin-left: 10px;
+        }
+
+        .hero-visual {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            transform: rotate(-3deg);
+        }
+
+        .visual-card {
+            min-height: 145px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background: var(--card);
+            border: 1px solid #50346c;
+            border-radius: 20px;
+            padding: 20px;
+            text-align: center;
+            transition: 0.3s;
+            animation: float 4s ease-in-out infinite;
+        }
+
+        .visual-card:nth-child(2),
+        .visual-card:nth-child(4) {
+            animation-delay: 1s;
+        }
+
+        .visual-card:hover {
+            border-color: var(--purple-light);
+            transform: translateY(-8px);
+        }
+
+        .visual-card .icon {
+            font-size: 35px;
+            color: var(--purple-light);
+            margin-bottom: 10px;
+        }
+
+        .visual-card h3 {
+            font-size: 15px;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        /* ABOUT */
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+        }
+
+        .box {
+            background: var(--card);
+            border: 1px solid #39264d;
+            border-radius: 18px;
+            padding: 28px;
+            transition: 0.3s;
+        }
+
+        .box:hover {
+            border-color: var(--purple);
+            transform: translateY(-5px);
+        }
+
+        .box h3 {
+            font-size: 21px;
+            margin-bottom: 15px;
+            color: var(--purple-light);
+        }
+
+        .box p {
+            color: var(--muted);
+            margin-bottom: 12px;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .tags span {
+            padding: 7px 13px;
+            background: rgba(168, 85, 247, 0.12);
+            border: 1px solid #563575;
+            border-radius: 30px;
+            font-size: 13px;
+        }
+
+        .tags i {
+            color: var(--purple-light);
+            margin-right: 6px;
+        }
+
+        /* SKILLS - 2 KOLOM DAN 2 BARIS */
+
+        .skills {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 22px;
+            max-width: 850px;
+            margin: 0 auto;
+        }
+
+        .skill {
+            background: var(--card);
+            border: 1px solid #39264d;
+            border-radius: 18px;
+            padding: 25px;
+            transition: 0.3s;
+        }
+
+        .skill:hover {
+            transform: translateY(-7px);
+            border-color: var(--purple);
+            box-shadow: 0 10px 25px rgba(168, 85, 247, 0.12);
+        }
+
+        .skill h3 {
+            margin-bottom: 8px;
+            font-size: 18px;
+        }
+
+        .skill h3 i {
+            color: var(--purple-light);
+            margin-right: 6px;
+        }
+
+        .skill p {
+            color: var(--muted);
+            font-size: 13px;
+        }
+
+        .skill-bar {
+            height: 8px;
+            background: #35253f;
+            border-radius: 10px;
+            margin-top: 18px;
+            overflow: hidden;
+        }
+
+        .skill-progress {
+            height: 100%;
+            background: linear-gradient(
+                90deg,
+                var(--purple-dark),
+                var(--purple-light)
+            );
+            border-radius: 10px;
+        }
+
+        /* PORTFOLIO */
+
+        .works {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+        .work {
+            background: var(--card);
+            border: 1px solid #39264d;
+            border-radius: 18px;
+            overflow: hidden;
+            transition: 0.3s;
+        }
+
+        .work:hover {
+            transform: translateY(-7px);
+            border-color: var(--purple);
+            box-shadow: 0 12px 30px rgba(124, 58, 237, 0.12);
+        }
+
+        .work-image {
+            height: 220px;
+            background: linear-gradient(135deg, #27133d, #7c3aed);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 60px;
+            overflow: hidden;
+        }
+
+        .work-image img,
+        .work-image video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .work-image .placeholder-icon {
+            color: var(--purple-light);
+        }
+
+        .work-info {
+            padding: 22px;
+        }
+
+        .work-info h3 {
+            margin-bottom: 8px;
+        }
+
+        .work-info p {
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        .work-tag {
+            display: inline-block;
+            color: var(--purple-light);
+            font-size: 12px;
+            margin-top: 12px;
+        }
+
+        /* CONTACT */
+
+        .contact {
+            background: #0b0710;
+            border-top: 1px solid #39264d;
+        }
+
+        .contact-content {
+            background: var(--card);
+            border: 1px solid #50346c;
+            border-radius: 22px;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .contact-content h2 {
+            margin-bottom: 15px;
+        }
+
+        .contact-content p {
+            color: var(--muted);
+            margin-bottom: 25px;
+        }
+
+        .contact-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .contact-buttons .btn i {
+            margin-right: 8px;
+        }
+
+        /* FOOTER */
+
+        footer {
+            padding: 25px 15px;
+            text-align: center;
+            background: #08050c;
+            color: var(--muted);
+            border-top: 1px solid #25182f;
+            font-size: 13px;
+        }
+
+        footer span {
+            color: var(--purple-light);
+        }
+
+        /* RESPONSIVE TABLET */
+
+        @media (max-width: 800px) {
+            nav .container {
+                padding: 15px 0;
+                flex-direction: column;
+            }
+
+            .nav-links {
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: 15px;
+            }
+
+            .hero {
+                padding: 60px 0;
+            }
+
+            .hero-content {
+                grid-template-columns: 1fr;
+                gap: 45px;
+            }
+
+            .hero-visual {
+                max-width: 500px;
+                width: 100%;
+                margin: auto;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+
+            /* Skill tetap 2 kolom */
+            .skills {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        /* RESPONSIVE HP */
+
+        @media (max-width: 550px) {
+            section {
+                padding: 60px 0;
+            }
+
+            .logo {
+                font-size: 17px;
+            }
+
+            .nav-links {
+                gap: 12px;
+            }
+
+            .nav-links a {
+                font-size: 12px;
+            }
+
+            /* Skill tetap 2 kolom pada HP */
+            .skills {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 12px;
+            }
+
+            .skill {
+                padding: 18px 14px;
+            }
+
+            .skill h3 {
+                font-size: 15px;
+            }
+
+            .skill p {
+                font-size: 12px;
+            }
+
+            .works {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-visual {
+                gap: 10px;
+            }
+
+            .visual-card {
+                min-height: 120px;
+                padding: 12px;
+            }
+
+            .visual-card h3 {
+                font-size: 12px;
+            }
+
+            .contact-content {
+                padding: 25px 18px;
+            }
+
+            .btn-outline {
+                margin: 10px 0 0;
+            }
+        }
+
+        /* AKSESIBILITAS ANIMASI */
+
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation: none !important;
+                transition: none !important;
+                scroll-behavior: auto !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav>
+        <div class="container">
+            <a href="#home" class="logo">Dewa.</a>
+
+            <div class="nav-links">
+                <a href="#home">Beranda</a>
+                <a href="#about">Tentang</a>
+                <a href="#skills">Skill</a>
+                <a href="#karya">Karya</a>
+                <a href="#kontak">Kontak</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <header class="hero" id="home">
+        <div class="container hero-content">
+
+            <div class="hero-text">
+                <span class="badge">
+                    Halo, salam kenal
+                    <i class="fa-solid fa-hand" aria-hidden="true"></i>
+                </span>
+
+                <h1>
+                    Aku Dewa Banyu Samudra,
+                    <span>Mahasiswa Teknik Komputer.</span>
+                </h1>
+
+                <p>
+                    Aku sedang belajar membuat hal-hal keren, mulai dari
+                    pemrograman, rangkaian elektronik, hingga desain kreatif.
+                    Bagiku, teknologi adalah cara untuk menciptakan sesuatu
+                    yang bermanfaat.
+                </p>
+
+                <a href="#karya" class="btn">
+                    Lihat Karyaku
+                    <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+                </a>
+
+                <a href="#kontak" class="btn btn-outline">
+                    <i class="fa-solid fa-paper-plane" aria-hidden="true"></i>
+                    Hubungi Aku
+                </a>
+            </div>
+
+            <div class="hero-visual">
+
+                <div class="visual-card">
+                    <div class="icon">
+                        <i class="fa-solid fa-laptop-code" aria-hidden="true"></i>
+                    </div>
+                    <h3>Pemrograman</h3>
+                </div>
+
+                <div class="visual-card">
+                    <div class="icon">
+                        <i class="fa-solid fa-bolt" aria-hidden="true"></i>
+                    </div>
+                    <h3>Elektronika</h3>
+                </div>
+
+                <div class="visual-card">
+                    <div class="icon">
+                        <i class="fa-solid fa-palette" aria-hidden="true"></i>
+                    </div>
+                    <h3>Desain Kreatif</h3>
+                </div>
+
+                <div class="visual-card">
+                    <div class="icon">
+                        <i class="fa-solid fa-rocket" aria-hidden="true"></i>
+                    </div>
+                    <h3>Teknologi</h3>
+                </div>
+
+            </div>
+        </div>
+    </header>
+
+    <!-- ABOUT -->
+    <section id="about">
+        <div class="container">
+            <h2>Tentang <span>Aku</span></h2>
+
+            <div class="about-grid">
+
+                <div class="box">
+                    <h3>
+                        <i class="fa-solid fa-user" aria-hidden="true"></i>
+                        Siapa Aku?
+                    </h3>
+
+                    <p>
+                        Aku adalah mahasiswa Teknik Komputer di Telkom
+                        University Surabaya. Aku tertarik dengan dunia
+                        komputer dan ingin memahami bagaimana perangkat
+                        elektronik serta teknologi bekerja.
+                    </p>
+
+                    <p>
+                        Cita-citaku adalah menjadi seorang engineer yang
+                        mampu menciptakan teknologi berguna bagi banyak orang.
+                    </p>
+                </div>
+
+                <div class="box">
+                    <h3>
+                        <i class="fa-solid fa-heart" aria-hidden="true"></i>
+                        Hobi & Hal Seru
+                    </h3>
+
+                    <p>
+                        Di waktu luang, aku suka melakukan kegiatan yang
+                        menyenangkan dan menambah pengalaman.
+                    </p>
+
+                    <div class="tags">
+                        <span>
+                            <i class="fa-solid fa-gamepad" aria-hidden="true"></i>
+                            Main Game
+                        </span>
+
+                        <span>
+                            <i class="fa-solid fa-music" aria-hidden="true"></i>
+                            Mendengarkan Musik
+                        </span>
+
+                        <span>
+                            <i class="fa-solid fa-cubes" aria-hidden="true"></i>
+                            Bermain Rubik
+                        </span>
+
+                        <span>
+                            <i class="fa-solid fa-code" aria-hidden="true"></i>
+                            Belajar Coding
+                        </span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills">
+        <div class="container">
+            <h2>Keahlian <span>Inti</span></h2>
+
+            <div class="skills">
+
+                <div class="skill">
+                    <h3>
+                        <i class="fa-solid fa-pen-nib" aria-hidden="true"></i>
+                        Desain Canva
+                    </h3>
+                    <p>Membuat poster dan presentasi.</p>
+
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 80%;"></div>
+                    </div>
+                </div>
+
+                <div class="skill">
+                    <h3>
+                        <i class="fa-solid fa-film" aria-hidden="true"></i>
+                        Edit Video
+                    </h3>
+                    <p>Mengedit video pendek menggunakan CapCut.</p>
+
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 75%;"></div>
+                    </div>
+                </div>
+
+                <div class="skill">
+                    <h3>
+                        <i class="fa-solid fa-code" aria-hidden="true"></i>
+                        HTML & CSS
+                    </h3>
+                    <p>Membuat dan mendesain halaman website.</p>
+
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 45%;"></div>
+                    </div>
+                </div>
+
+                <div class="skill">
+                    <h3>
+                        <i class="fa-solid fa-microchip" aria-hidden="true"></i>
+                        Elektronika
+                    </h3>
+                    <p>Mempelajari rangkaian dan komponen elektronik.</p>
+
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 55%;"></div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- PORTFOLIO -->
+    <section id="karya">
+        <div class="container">
+            <h2>Kumpulan <span>Karya</span></h2>
+
+            <div class="works">
+
+                <article class="work">
+                    <div class="work-image">
+                        <img
+                            src="rakit pc.jpeg"
+                            alt="Rakit PC"
+                            onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"
+                        >
+
+                        <i
+                            class="fa-solid fa-map placeholder-icon"
+                            aria-hidden="true"
+                            style="display:none;"
+                        ></i>
+                    </div>
+
+                    <div class="work-info">
+                        <h3>Rakit PC</h3>
+
+                        <p>
+                            Memahami Dan Mempelajari Hardware Dan Software.
+                        </p>
+
+                        <span class="work-tag">
+                            <i class="fa-solid fa-tags" aria-hidden="true"></i>
+                            HARDWARE & SOFTWARE
+                        </span>
+                    </div>
+                </article>
+
+                <article class="work">
+                    <div class="work-image">
+                        <video controls preload="metadata">
+                            <source src="id card.mp4" type="video/mp4">
+                            Browser kamu tidak mendukung video.
+                        </video>
+                    </div>
+
+                    <div class="work-info">
+                        <h3>ID Card LED</h3>
+
+                        <p>
+                            Proyek kartu identitas LED yang dikembangkan
+                            menggunakan mikrokontroler dan rangkaian elektronik.
+                        </p>
+
+                        <span class="work-tag">
+                            <i class="fa-solid fa-microchip" aria-hidden="true"></i>
+                            ELEKTRONIKA & IOT
+                        </span>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="contact" id="kontak">
+        <div class="container">
+
+            <div class="contact-content">
+                <h2>Yuk, <span>Ngobrol!</span></h2>
+
+                <p>
+                    Mau berkolaborasi, bertanya, atau sekadar berkenalan?
+                    Kamu bisa menghubungiku melalui kontak berikut.
+                </p>
+
+                <div class="contact-buttons">
+
+                    <a
+                        class="btn"
+                        href="mailto:samudradewa854@gmail.com"
+                    >
+                        <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+                        Email
+                    </a>
+
+                    <a
+                        class="btn"
+                        href="https://wa.me/082140873256"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+                        WhatsApp
+                    </a>
+
+                    <a
+                        class="btn"
+                        href="CV.pdf"
+                        download
+                    >
+                        <i class="fa-solid fa-download" aria-hidden="true"></i>
+                        Download CV
+                    </a>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>
+            © 2026 <span>Dewa Banyu Samudra</span>.
+        </p>
+    </footer>
+
+</body>
+</html>
